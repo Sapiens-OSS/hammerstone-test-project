@@ -1,0 +1,30 @@
+{
+    "hammerstone:object": {
+        "description": {
+            "identifier": "sirlich:tall_pot",
+            "base_game_version": "0.3.8",
+            "author": "SirLich"
+        },
+        "components": {
+            "object": {
+                "localization": {
+                    "needs_localization": false,
+                    "name": "Tall Pot",
+                    "plural": "Tall Pots"
+                },
+                "scale": 1,
+                "model": "tallPot",
+                "physics": true,
+                "marker_positions": [ 0.0, 0.3, 0.0 ]
+            },
+            "research": {
+                "required_research": [
+                    "potteryFiring"
+                ]
+            },
+            "decoration": {
+                "enabled": true
+            }
+        }
+    }
+}
