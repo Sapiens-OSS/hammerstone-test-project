@@ -1,0 +1,41 @@
+{
+    "$schema": "../../schemas/object.schema.json",
+    "hammerstone:object_definition": {
+        "description": {
+            "identifier": "sirlich:food_sphere",
+            "name": "Food Sphere",
+            "plural": "Food Spheres"
+        },
+        "meta": {
+            "base_game_version": "0.3.8",
+            "author": "SirLich"
+        },
+        "components": {
+            "hammerstone:object": {
+                "scale": 1,
+                "model": "foodSphere",
+                "physics": true,
+                "marker_positions": [ 0.0, 0.5, 0.0 ]
+            },
+            "hammerstone:evolving_object": {
+                "min_time": 0.001,
+                "transform_to": [
+                    "sirlich:tall_pot"
+                ],
+                "category": "rot"
+            },
+            "hammerstone:food": {
+                "portions": 1,
+                "value": 0.7,
+                "food_poison_chance": 0.2,
+                "default_disabled": false
+            },
+            "hammerstone:storage": {
+                "identifier": "sirlich:food_shapes"
+            },
+            "hammerstone:decoration": {
+                "enabled": true
+            }
+        }
+    }
+}

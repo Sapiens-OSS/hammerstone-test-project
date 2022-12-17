@@ -1,0 +1,25 @@
+{
+	"hammerstone:storage": {
+		"description": {
+			"identifier": "sirlich:food_shapes",
+			"base_game_version": "0.3.8",
+			"author": "SirLich"
+		},
+		"components": {
+			"hammerstone:carry": {
+				"count": {
+					"normal": 4,
+					"limited_ability": 2,
+					"running": 1
+				},
+				"type": "small",
+				"offset": [0.0, 0.01, 0.0]
+			},
+			"hammerstone:storage": {
+				"preview_object": "sirlich:food_sphere",
+				"name": "Pots",
+				"size": [0.12, 0.12, 0.12]
+			}
+		}
+	}
+}

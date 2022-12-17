@@ -1,9 +1,9 @@
 {
     "hammerstone:object_definition": {
         "description": {
-            "identifier": "sirlich:tall_pot",
-            "name": "Tall Pot",
-            "plural": "Tall Pots"
+            "identifier": "sirlich:food_cube",
+            "name": "Food Cube",
+            "plural": "Food Cubes"
         },
         "meta": {
             "base_game_version": "0.3.8",
@@ -11,13 +11,17 @@
         },
         "components": {
             "hammerstone:object": {
-                "scale": 1,
-                "model": "tallPot",
+                "scale": 0.2,
+                "model": "foodCube",
                 "physics": true,
-                "marker_positions": [ 0.0, 0.3, 0.0 ]
+                "marker_positions": [ 0.0, 0.5, 0.0 ]
+            },
+            "hammerstone:food": {
+                "portions": 1,
+                "value": 0.7
             },
             "hammerstone:storage": {
-                "identifier": "sirlich:pot_storage"
+                "identifier": "sirlich:food_shapes"
             },
             "hammerstone:decoration": {
                 "enabled": true
