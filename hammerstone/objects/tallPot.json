@@ -17,6 +17,9 @@
                 "physics": true,
                 "marker_positions": [ 0.0, 0.3, 0.0 ]
             },
+            "hammerstone:storage": {
+                "identifier": "sirlich:pot_storage"
+            },
             "research": {
                 "required_research": [
                     "potteryFiring"
