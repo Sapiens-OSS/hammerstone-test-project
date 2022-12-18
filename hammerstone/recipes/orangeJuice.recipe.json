@@ -1,5 +1,6 @@
 {
-	"hammerstone:crafting_recipe": {
+	"$schema": "../../schemas/recipe.schema.json",
+	"hammerstone:recipe_definition": {
 		"description": {
 			"identifier": "sirlich:orange_juice_recipe",
 			"name": "Orange Juice",
@@ -9,7 +10,7 @@
 		"meta": {
 			"author": "SirLich",
 			"date": "12/18/2022",
-			"__comment": "Missing: classification, isFoodPreperation, inProgressBuildModel"
+			"__comment": "Missing: isFoodPreperation, inProgressBuildModel"
 		},
 		"components": {
 			"hammerstone:recipe": {
@@ -33,11 +34,20 @@
 			},
 
 			"hammerstone:output": {
-				"output_by_object": {
-					"firedCookingPot": [
-						"firedCookingPot"
-					]
-				}
+				"output_by_object": [
+					{
+						"input": "firedCookingPot",
+						"output": [
+							"firedCookingPot"
+						]
+					},
+					{
+						"input": "orange",
+						"output": [
+							"orangeJuice"
+						]
+					}
+				]
 			},
 
 			"hammerstone:build_sequence": {
