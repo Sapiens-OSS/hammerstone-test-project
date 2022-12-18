@@ -1,0 +1,84 @@
+{
+	"hammerstone:crafting_recipe": {
+		"description": {
+			"identifier": "sirlich:orange_juice_recipe",
+			"name": "Orange Juice",
+			"plural": "Orange Juice",
+			"summary": "A delicious and sugary drink, crushed from the finest fruit."
+		},
+		"meta": {
+			"author": "SirLich",
+			"date": "12/18/2022",
+			"__comment": "Missing: classification, isFoodPreperation, inProgressBuildModel"
+		},
+		"components": {
+			// Base definition of the recipe
+			"hammerstone:recipe": {
+				"preview_object": "orange", // It's allowed to reference vanilla stuff here!,
+				"classification": "craft"
+			},
+			
+			// A list of requirements
+			"hammerstone:requirements": {
+				"skills": [
+					"campfireCooking"
+				],
+				"additional_required_skill": "pottery",
+				"craft_area_groups": [
+					"campfire"
+				],
+
+				"temp_tool": {
+					"identifier": "stick",
+					"offset": null,
+					"rotation": null
+				},
+				
+				"tool": {} // Mutually exclusive with temp_tool
+			},
+
+			// A description of what you get from the recipe
+			"hammerstone:output": {
+				"output_by_object": {
+					"firedCookingPot": [
+						"firedCookingPot"
+					]
+				}
+			},
+
+			// The actual sequence to build the recipe
+			"hammerstone:build_sequence": {
+				"build_sequence_identifier": "fireStickCook",
+				"sequence": [
+					{
+						"resource_identifier": "firedCookingPot",
+						"count": 1,
+						"action": {
+							"action_type": "inspect",
+							"duration": 1,
+							"duration_without_skill": 15
+						}
+					},
+					{
+						"resource_identifier": "orange",
+						"count": 2,
+						"action": {
+							"action_type": "inspect",
+							"duration": 0.5,
+							"duration_without_skill": 15
+						}
+					},
+					{
+						"resource_identifier": "firedBowl",
+						"count": 1,
+						"action": {
+							"action_type": "inspect",
+							"duration": 0.5,
+							"duration_without_skill": 15
+						}
+					}
+				]
+			}
+		}
+	}
+}
