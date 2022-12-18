@@ -17,9 +17,6 @@
                 "physics": true,
                 "marker_positions": [ 0.0, 0.5, 0.0 ]
             },
-            "hammerstone:resource_link": {
-                "resource_identifier": "sirlich:food_shapes"
-            },
             "hammerstone:evolving_object": {
                 "min_time": 0.001,
                 "transform_to": [

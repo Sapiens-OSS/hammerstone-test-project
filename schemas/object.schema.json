@@ -93,6 +93,10 @@
                                         "snakeSkull"
                                     ]
                                 },
+                                "random_rotation": {
+                                    "type": "boolean",
+                                    "description": "Whether the object will have a random initial rotation."
+                                },
                                 "physics": {
                                     "type": "boolean",
                                     "description": "Whether the object has physics."
@@ -173,6 +177,17 @@
                                 "food_poison_chance": {
                                     "type": "number",
                                     "description": "The chance your Sapien will become sick consuming this food. 0=0%, 1=100%"
+                                },
+                                "items_when_eaten": {
+                                    "type": "array",
+                                    "description": "The list of items to transform to, when this object is eaten.",
+                                    "items": {
+                                        "type": "string",
+                                        "description": "Object identifier",
+                                        "examples": [
+                                            "sirlich:rat_skull"
+                                        ]
+                                    }
                                 }
                             }
                         },
@@ -198,6 +213,9 @@
                                     "description": "Whether this object can be placed in the world as a decoration"
                                 }
                             }
+                        },
+                        "hammerstone:harvestable": {
+                            "properties": {}
                         }
                     }
                 }

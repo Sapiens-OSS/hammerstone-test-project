@@ -1,0 +1,29 @@
+{
+	"hammerstone:entity_definition": {
+		"description": {
+			"identifier": "sirLich:glyptodon"
+		},
+		"meta": {
+			"author": "SirLich",
+			"hammerstone_version": "1.0"
+		},
+		"components": {
+			"hammerstone:entity": {
+				"health": 8
+			},
+			"hammerstone:huntable": {
+
+			},
+			"hammerstone:spawn_behavior": {
+				"frequency": 0.5,
+				"distance": 600
+			},
+			"hammerstone:aggressive": {
+
+			},
+			"hammerstone:pathfinding": {
+				
+			}
+		}
+	}
+}

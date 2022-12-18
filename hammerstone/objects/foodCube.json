@@ -1,4 +1,5 @@
 {
+    "$schema": "../../schemas/object.schema.json",
     "hammerstone:object_definition": {
         "description": {
             "identifier": "sirlich:food_cube",
@@ -20,7 +21,7 @@
                 "portions": 1,
                 "value": 0.7
             },
-            "hammerstone:storage": {
+            "hammerstone:storage_link": {
                 "identifier": "sirlich:food_shapes"
             },
             "hammerstone:decoration": {

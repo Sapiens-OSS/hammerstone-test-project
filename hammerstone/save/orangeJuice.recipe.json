@@ -12,13 +12,10 @@
 			"__comment": "Missing: classification, isFoodPreperation, inProgressBuildModel"
 		},
 		"components": {
-			// Base definition of the recipe
 			"hammerstone:recipe": {
-				"preview_object": "orange", // It's allowed to reference vanilla stuff here!,
+				"preview_object": "orange", 
 				"classification": "craft"
 			},
-			
-			// A list of requirements
 			"hammerstone:requirements": {
 				"skills": [
 					"campfireCooking"
@@ -32,12 +29,9 @@
 					"identifier": "stick",
 					"offset": null,
 					"rotation": null
-				},
-				
-				"tool": {} // Mutually exclusive with temp_tool
+				}
 			},
 
-			// A description of what you get from the recipe
 			"hammerstone:output": {
 				"output_by_object": {
 					"firedCookingPot": [
@@ -46,7 +40,6 @@
 				}
 			},
 
-			// The actual sequence to build the recipe
 			"hammerstone:build_sequence": {
 				"build_sequence_identifier": "fireStickCook",
 				"sequence": [

@@ -1,4 +1,5 @@
 {
+    "$schema": "../../schemas/object.schema.json",
     "hammerstone:object_definition": {
         "description": {
             "identifier": "sirlich:tall_pot",
@@ -16,7 +17,7 @@
                 "physics": true,
                 "marker_positions": [ 0.0, 0.3, 0.0 ]
             },
-            "hammerstone:storage": {
+            "hammerstone:storage_link": {
                 "identifier": "sirlich:pot_storage"
             },
             "hammerstone:decoration": {
