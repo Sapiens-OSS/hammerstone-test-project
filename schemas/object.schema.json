@@ -76,6 +76,7 @@
                     "required": [
                         "hammerstone:object"
                     ],
+                    "additionalProperties": false,
                     "properties": {
                         "hammerstone:object": {
                             "type": "object",
@@ -141,6 +142,60 @@
                                             "title": "Sets that the object is de-spawning. i.e., transforming into nothing."
                                         }
                                     ]
+                                }
+                            }
+                        },
+                        "hammerstone:resource_link": {
+                            "description": "Defines whether this object should use an existing resource. If missing, resource will be auto-generated.",
+                            "type": "object",
+                            "properties": {
+                                "resource_identifier": {
+                                    "type": "string",
+                                    "description": "The identifier of the resource.",
+                                    "examples": [
+                                        "sirlich:skulls"
+                                    ]
+                                }
+                            }
+                        },
+                        "hammerstone:food": {
+                            "type": "object",
+                            "description": "Defines that the object is edible, and specifies it's properties.",
+                            "properties": {
+                                "portions": {
+                                    "type": "integer",
+                                    "description": "The number of times this food item can be eaten before it is fully consumed."
+                                },
+                                "value": {
+                                    "type": "number",
+                                    "description": "The saturation value gained each time this food is eaten."
+                                },
+                                "food_poison_chance": {
+                                    "type": "number",
+                                    "description": "The chance your Sapien will become sick consuming this food. 0=0%, 1=100%"
+                                }
+                            }
+                        },
+                        "hammerstone:storage_link": {
+                            "type":"object",
+                            "description": "Specifies how this item is carried and stored.",
+                            "properties": {
+                                "identifier": {
+                                    "type": "string",
+                                    "description": "The identifier of the storage type for this object (defined in it's own file).",
+                                    "examples": [
+                                        "sirlich:skull_storage"
+                                    ]
+                                }
+                            }
+                        },
+                        "hammerstone:decoration": {
+                            "type": "object",
+                            "description": "Specifies the decoration related properties for this object.",
+                            "properties": {
+                                "enabled": {
+                                    "type":"boolean",
+                                    "description": "Whether this object can be placed in the world as a decoration"
                                 }
                             }
                         }
