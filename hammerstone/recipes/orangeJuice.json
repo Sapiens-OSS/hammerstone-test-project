@@ -9,30 +9,26 @@
 		},
 		"meta": {
 			"author": "SirLich",
-			"date": "12/18/2022",
-			"__comment": "Missing: isFoodPreperation, inProgressBuildModel"
+			"date": "12/18/2022"
 		},
 		"components": {
 			"hammerstone:recipe": {
-				"preview_object": "orange", 
-				"classification": "craft"
+				"preview_object": "earmuffs:orange_juice",
+				"classification": "craft",
+				"isFoodPreparation": true
 			},
 			"hammerstone:requirements": {
 				"skills": [
-					"campfireCooking"
+					"campfireCooking",
+					"pottery"
 				],
-				"additional_required_skill": "pottery",
 				"craft_area_groups": [
 					"campfire"
 				],
-
-				"temp_tool": {
-					"identifier": "stick",
-					"offset": null,
-					"rotation": null
-				}
+				"tools": [
+					"grinding"
+				]
 			},
-
 			"hammerstone:output": {
 				"output_by_object": [
 					{
@@ -44,17 +40,31 @@
 					{
 						"input": "orange",
 						"output": [
-							"orangeJuice"
+							"earmuffs:orange_juice"
 						]
 					}
 				]
 			},
-
 			"hammerstone:build_sequence": {
-				"build_sequence_identifier": "fireStickCook",
-				"sequence": [
+				"build_sequence_model": "craftSimple",
+				"build_sequence": {
+					"action": "fireStickCook",
+					"tool": "",
+					"steps": []
+				},
+				"object_prop": {
+					"object": "stick",
+					"offset": null,
+					"rotation": null
+				},
+				"resource_prop": {
+					"resource_index": 1,
+					"offset": null,
+					"rotation": null
+				},
+				"resource_sequence": [
 					{
-						"resource_identifier": "firedCookingPot",
+						"resource": "firedCookingPot",
 						"count": 1,
 						"action": {
 							"action_type": "inspect",
@@ -63,21 +73,19 @@
 						}
 					},
 					{
-						"resource_identifier": "orange",
+						"resource": "orange",
 						"count": 2,
 						"action": {
 							"action_type": "inspect",
-							"duration": 0.5,
-							"duration_without_skill": 15
+							"duration": 0.5
 						}
 					},
 					{
-						"resource_identifier": "firedBowl",
+						"resource": "firedBowl",
 						"count": 1,
 						"action": {
 							"action_type": "inspect",
-							"duration": 0.5,
-							"duration_without_skill": 15
+							"duration": 0.5
 						}
 					}
 				]

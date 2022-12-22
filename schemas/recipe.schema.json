@@ -106,7 +106,7 @@
                             "properties": {
                                 "skills": {
                                     "type": "array",
-                                    "description": "The skill IDs which must be used to craft this item.",
+                                    "description": "The skill IDs which must be used to craft this item. Maximum of two.",
                                     "items": {
                                         "type": "string",
                                         "description": "Skill ID",
@@ -114,10 +114,6 @@
                                             "campfireCooking"
                                         ]
                                     }
-                                },
-                                "additional_required_skill": {
-                                    "type": "string",
-                                    "description": "An additional skill which must be unlocked in order to complete this recipe."
                                 },
                                 "craft_area_groups": {
                                     "type": "array",
@@ -130,20 +126,15 @@
                                         ]
                                     }
                                 },
-                                "tool": {},
-                                "temp_tool": {
-                                    "description": "A non-tool item which is temporarily used as a tool for this recipe.",
-                                    "type": "object",
-                                    "properties": {
-                                        "identifier": {
-                                            "type": "string",
-                                            "description": "The identifier of the item to use.",
-                                            "examples": [
-                                                "stick"
-                                            ]
-                                        },
-                                        "offset": {},
-                                        "rotation": {}
+                                "tools": {
+                                    "type": "array",
+                                    "description": "The tool IDs which are required to craft this item.",
+                                    "items": {
+                                        "type": "string",
+                                        "description": "Tool ID",
+                                        "examples": [
+                                            "grinding"
+                                        ]
                                     }
                                 }
                             }
@@ -186,40 +177,128 @@
                             "type": "object",
                             "description": "Specify the required resources and actions taken to craft this recipe.",
                             "properties": {
-                                "build_sequence_identifier": {
+                                "build_sequence_model": {
                                     "type": "string",
-                                    "description": "Undocumented",
+                                    "description": "A model with placeholders used while crafting. For example, you can define positions for resources or tools that appear on the ground.",
                                     "examples": [
                                         "fireStickCook"
                                     ]
                                 },
-                                "sequence": {
+                                "build_sequence": {
+                                    "type": "object",
+                                    "description": "Specify the sapien logic and animation.",
+                                    "properties": {
+                                        "action": {
+                                            "type": "string",
+                                            "description": "The actionSequence type to use during the crafting animation.",
+                                            "examples": [
+                                                "chop",
+                                                "mine",
+                                                "eat",
+                                                "fireStickCook"
+                                            ]
+                                        },
+                                        "tool": {
+                                            "type": "string",
+                                            "description": "The tool type to use during the crafting animation.",
+                                            "examples": [
+                                                "treeChop",
+                                                "mine",
+                                                "grinding",
+                                                "carving"
+                                            ]
+                                        },
+                                        "steps": {
+                                            "type": "array",
+                                            "description": "(Optional, see schema for more details)\nBy default, Hammerstone will keep your build sequence generic. Add steps here to overwrite these defaults. build_sequence's action and tool properties will be ignored.",
+                                            "examples": [
+                                                {
+                                                    "type": "clearIncorrectResources"
+                                                },
+                                                {
+                                                    "type": "clearObjects"
+                                                },
+                                                {
+                                                    "type": "bringResources"
+                                                },
+                                                {
+                                                    "type": "bringTools"
+                                                },
+                                                {
+                                                    "type": "moveComponents"
+                                                },
+                                                {
+                                                    "type": "actionSequence",
+                                                    "action": "dig",
+                                                    "tool": "dig",
+                                                    "repeatCount": 7,
+                                                    "skillRequiredToComplete": true,
+                                                    "submodelEnabledOnComplete": {
+                                                        "placeholderKey": "mound",
+                                                        "modelName": "plantHole"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+                                "object_prop": {
+                                    "description": "An object to temporarily use as a tool for this recipe.",
+                                    "type": "object",
+                                    "properties": {
+                                        "object": {
+                                            "type": "string",
+                                            "description": "The identifier of the object to use.",
+                                            "examples": [
+                                                "stick"
+                                            ]
+                                        },
+                                        "offset": {},
+                                        "rotation": {}
+                                    }
+                                },
+                                "resource_prop": {
+                                    "description": "A resource to temporarily attach to your hand for this recipe.",
+                                    "type": "object",
+                                    "properties": {
+                                        "resource_index": {
+                                            "type": "integer",
+                                            "description": "The index of the resource to use from resource_sequence.",
+                                            "examples": [
+                                                1
+                                            ]
+                                        },
+                                        "offset": {},
+                                        "rotation": {}
+                                    }
+                                },
+                                "resource_sequence": {
                                     "type": "array",
                                     "description": "The sequence of items and actions to craft this recipe.",
                                     "items": {
                                         "type": "object",
                                         "description": "An individual sequence event, controlling the use/application of a single item.",
                                         "required": [
-                                            "resource_identifier"
+                                            "resource"
                                         ],
                                         "properties": {
-                                            "resource_identifier": {
+                                            "resource": {
                                                 "type": "string",
-                                                "description": "The identifier of the resource to apply",
+                                                "description": "The identifier of a resource ingredient.",
                                                 "examples": [
                                                     "orange"
                                                 ]
                                             },
                                             "count": {
                                                 "type": "integer",
-                                                "description": "The number of items to use.",
+                                                "description": "The number of resource ingredients to use.",
                                                 "examples": [
                                                     1
                                                 ]
                                             },
                                             "action": {
                                                 "type": "object",
-                                                "description": "The action to perform, after placing the item. Used so that the recipe takes time.",
+                                                "description": "The action to perform after placing the item. Used so that the recipe takes time.",
                                                 "properties": {
                                                     "action_type": {
                                                         "type": "string",

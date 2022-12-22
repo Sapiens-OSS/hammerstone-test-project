@@ -1,0 +1,37 @@
+{
+    "$schema": "../../schemas/object.schema.json",
+    "hammerstone:object_definition": {
+        "description": {
+            "identifier": "earmuffs:orange_juice",
+            "name": "Orange Juice",
+            "plural": "Orange Juices"
+        },
+        "meta": {
+            "base_game_version": "0.3.8",
+            "author": "earmuffs"
+        },
+        "components": {
+            "hammerstone:object": {
+                "scale": 1,
+                "model": "orangeJuice",
+                "physics": true,
+                "marker_positions": [ 0.0, 0.5, 0.0 ]
+            },
+            "hammerstone:food": {
+                "portions": 2,
+                "value": 1,
+                "food_poison_chance": 0.01,
+                "default_disabled": false,
+                "items_when_eaten": [
+                    "firedBowl"
+                ]
+            },
+            "hammerstone:storage_link": {
+                "identifier": "earmuffs:orange_juice_storage"
+            },
+            "hammerstone:decoration": {
+                "enabled": true
+            }
+        }
+    }
+}

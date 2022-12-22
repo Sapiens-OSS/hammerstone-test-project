@@ -1,0 +1,25 @@
+{
+	"hammerstone:storage": {
+		"description": {
+			"identifier": "earmuffs:orange_juice_storage",
+			"base_game_version": "0.3.8",
+			"author": "earmuffs"
+		},
+		"components": {
+			"hammerstone:carry": {
+				"count": {
+					"normal": 4,
+					"limited_ability": 2,
+					"running": 1
+				},
+				"type": "small",
+				"offset": [0.0, 0.01, 0.0]
+			},
+			"hammerstone:storage": {
+				"preview_object": "earmuffs:orange_juice",
+				"name": "Orange Juice",
+				"size": [0.12, 0.12, 0.12]
+			}
+		}
+	}
+}
