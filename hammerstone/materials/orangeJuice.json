@@ -1,0 +1,23 @@
+{
+    "$schema": "../../schemas/material.schema.json",
+    "hammerstone:material_definition": {
+        "meta": {
+            "sapiens_version": "0.3.8",
+            "author": "earmuffs"
+        },
+        "materials": [
+            {
+                "identifier": "earmuffs:orangeJuice",
+                "color": [ 1.0, 0.33, 0.0 ],
+                "roughness": 0.5,
+                "metal": 0
+            },
+            {
+                "identifier": "earmuffs:orangeJuicePulp",
+                "color": [ 1.0, 0.925, 0.15 ],
+                "roughness": 0.5,
+                "metal": 0
+            }
+        ]
+    }
+}
