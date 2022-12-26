@@ -215,7 +215,27 @@
                             }
                         },
                         "hammerstone:harvestable": {
-                            "properties": {}
+                            "properties": {
+                                "identifiers": {
+                                    "type": "array",
+                                    "description": "The list of resources to drop when the object is harvested. Duplicates are allowed.",
+                                    "items": {
+                                        "type": "string",
+                                        "description": "The identifier of a single item to drop.",
+                                        "examples": [
+                                            "hs:rat_skull"
+                                        ]
+                                    }
+                                },
+                                "single_object_count": {
+                                    "type": "integer",
+                                    "description": "UNDOCUMENTED"
+                                },
+                                "completion_group_count": {
+                                    "type": "integer",
+                                    "description": "UNDOCUMENTED"
+                                }
+                            }
                         }
                     }
                 }
