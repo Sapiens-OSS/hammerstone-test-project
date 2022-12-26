@@ -1,0 +1,28 @@
+{
+    "$schema": "../../schemas/skill.schema.json",
+    "hammerstone:skill_definition": {
+        "meta": {
+            "sapiens_version": "0.3.8",
+            "author": "earmuffs"
+        },
+        "skills": [
+            {
+                "description": {
+                    "identifier": "earmuffs:stoneBuilding",
+                    "name": "Stone Building",
+                    "description": "Create structures out of rock.",
+                    "icon": "icon_brickBuilding"
+                },
+                "skill": {
+                    "row": 7,
+                    "column": 3,
+                    "requiredSkills": [
+                        "thatchBuilding"
+                    ],
+                    "startLearned": true,
+                    "impactedByLimitedGeneralAbility": true
+                }
+            }
+        ]
+    }
+}
