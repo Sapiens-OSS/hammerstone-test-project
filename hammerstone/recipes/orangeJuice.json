@@ -62,7 +62,7 @@
 					"offset": null,
 					"rotation": null
 				},
-				"resource_sequence": [
+				"craft_sequence": [
 					{
 						"resource": "firedCookingPot",
 						"count": 1,
